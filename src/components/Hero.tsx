@@ -84,7 +84,7 @@ const Hero = () => {
                 <div className="text-center">
                   <div className="absolute inset-4 rounded-full bg-white shadow-inner flex items-center justify-center overflow-hidden">
                     <img 
-                      src="https://i.ibb.co/8D6NRVmF/1739042759287.jpg" 
+                      src="/naren.jpeg" 
                       alt="Narenkumar" 
                        className="w-full h-full object-cover rounded-full"></img>
                   </div>
