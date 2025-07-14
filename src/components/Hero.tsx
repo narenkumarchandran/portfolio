@@ -1,4 +1,4 @@
-import narenImage from "./naren.jpeg";
+import Narenimage from "../naren.jpeg"
 import React from 'react';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -84,7 +84,7 @@ const Hero = () => {
                 <div className="text-center">
                   <div className="absolute inset-4 rounded-full bg-white shadow-inner flex items-center justify-center overflow-hidden">
                     <img 
-                      src={narenImage} 
+                      src={Narenimage} 
                       alt="Narenkumar" 
                        className="w-full h-full object-cover rounded-full"></img>
                   </div>
