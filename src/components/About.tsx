@@ -10,13 +10,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-6 bg-white">
+    <section id="about" className="py-20 px-6 bg-coral-600">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl  text-coral-100 font-bold mb-6">
             About <span className="text-coral-500">Me</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl  text-coral-100 max-w-3xl mx-auto">
             Aspiring engineer pursuing B.Tech in Computer Science (IoT) with hands-on experience in embedded systems, AI tools, and full-stack projects.
           </p>
         </div>
@@ -28,8 +28,8 @@ const About = () => {
                 <GraduationCap className="h-6 w-6 text-coral-500" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Education</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl  text-coral-500 font-semibold mb-2">Education</h3>
+                <p className=" text-coral-100">
                   B.Tech Computer Science and Engineering (IoT)<br />
                   Shiv Nadar University, Chennai<br />
                   CGPA: 8.70 | Aug 2023 - Aug 2027
@@ -42,8 +42,8 @@ const About = () => {
                 <Code className="h-6 w-6 text-blue-500" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Leadership & Involvement</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl  text-coral-500 font-semibold mb-2">Leadership & Involvement</h3>
+                <p className=" text-coral-100">
                   Core Committee Member<br />
                   SNUC Potential (Robotics Club)<br />
                   Aug 2024 - Present
@@ -56,17 +56,17 @@ const About = () => {
                 <Target className="h-6 w-6 text-green-500" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Focus Areas</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl   text-coral-500 font-semibold mb-2">Focus Areas</h3>
+                <p className=" text-coral-100">
                   IoT & Embedded Systems, AI Integration, Full-Stack Development, and creating accessible tech solutions.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-coral-400 to-coral-600 rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-6">
-              <Lightbulb className="h-6 w-6 text-coral-500" />
+              <Lightbulb className="h-6 w-6 text-white" />
               <h3 className="text-2xl font-semibold">Skills & Technologies</h3>
             </div>
             <div className="flex flex-wrap gap-3">

@@ -64,10 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				coral: {
-					100: '#fed7d7',
-					400: '#f56565',
-					500: '#e53e3e',
-					600: '#c53030',
+					100: '#f7f6fcff',
+					400: '#0c76e8ff',
+					500: 'rgba(35, 117, 204, 1)',
+					600: '#152b4fff',
+					700: '#edededff',
 				}
 			},
 			borderRadius: {

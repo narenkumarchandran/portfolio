@@ -12,21 +12,21 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <section id="home" className="pt-20 pb-16 px-6  bg-coral-600">
+      <div className="container   mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
           <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
             <div className="animate-fade-in">
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-7xl  text-coral-100 font-bold mb-6 leading-tight">
                 Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-coral-500 to-coral-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-coral-500 to-coral-400 bg-clip-text text-transparent">
                   Narenkumar C
                 </span>
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
-                B.Tech Computer Science & Engineering (IoT) Student
+              <p className="text-xl lg:text-2xl  text-coral-100 mb-8 leading-relaxed">
+                B.Tech Computer Science & Engineering Student
               </p>
-              <p className="text-lg text-gray-500 mb-10 max-w-2xl">
+              <p className="text-lg text-coral-100 mb-10 max-w-2xl">
                 Aspiring engineer with hands-on experience in embedded systems, AI tools, and full-stack projects. 
                 Passionate about creating impactful, accessible tech solutions.
               </p>

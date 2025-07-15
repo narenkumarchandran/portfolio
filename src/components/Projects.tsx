@@ -36,32 +36,32 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="projects" className="py-20 px-6 bg-coral-600">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl  text-white lg:text-5xl font-bold mb-6">
             My <span className="text-coral-500">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-coral-100 max-w-3xl mx-auto">
             Here are some of the projects I've worked on that showcase my skills in IoT, AI integration, and full-stack development.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8  ">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:scale-105 animate-fade-in"
+              className="bg-gradient-to-br from-coral-400  to-coral-600 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm text-gray-500">{project.date}</span>
+                  <Calendar className="h-4 w-4 text" />
+                  <span className="text-sm text-white">{project.date}</span>
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-3 text-gray-800">{project.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-white mb-4 leading-relaxed">{project.description}</p>
                 
                 <div className="flex items-center gap-2 mb-4">
                   <Tag className="h-4 w-4 text-coral-500" />
@@ -77,14 +77,14 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="flex justify-center">
+                <div className="flex justify-center ">
                   <Button
                     asChild
                     variant="outline"
-                    className="border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-6 py-2"
+                    className="bg-gradient-to-br from-black to-coral-600 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-6 py-2"
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
+                      <Github className="mr-2 h-4 w-4 " />
                       View Code
                     </a>
                   </Button>
@@ -98,7 +98,7 @@ const Projects = () => {
           <Button
             asChild
             variant="outline"
-            className="border-2 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-8 py-3 text-lg"
+            className="bg-coral-600 border-2 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-8 py-3 text-lg"
           >
             <a href="https://github.com/narenkumarchandran" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-5 w-5" />

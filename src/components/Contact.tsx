@@ -30,13 +30,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-white">
+    <section id="contact" className="py-20 px-6 bg-coral-600">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl text-white font-bold mb-6">
             Get In <span className="text-coral-500">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             I'm always open to discussing new opportunities, hackathons, IoT projects, or just having a chat about technology.
           </p>
         </div>
@@ -45,8 +45,8 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8 ">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Let's Connect</h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <h3 className="text-2xl font-bold mb-6 text-coral-400">Let's Connect</h3>
+              <p className="text-white mb-8 leading-relaxed">
                 Whether you want to collaborate on a project, discuss IoT innovations, or just want to say hello, 
                 I'd love to hear from you. Drop me a message and I'll get back to you as soon as possible.
               </p>
@@ -58,8 +58,8 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-coral-500" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Email</h4>
-                  <p className="text-gray-600">narenkumarchandran@gmail.com</p>
+                  <h4 className="font-semibold text-white">Email</h4>
+                  <p className="text-white">narenkumarchandran@gmail.com</p>
                 </div>
               </div>
 
@@ -68,8 +68,8 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-blue-500" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Phone</h4>
-                  <p className="text-gray-600">+91 8838664792</p>
+                  <h4 className="font-semibold text-white">Phone</h4>
+                  <p className="text-white">+91 8838664792</p>
                 </div>
               </div>
 
@@ -78,8 +78,8 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-green-500" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Location</h4>
-                  <p className="text-gray-600">Chennai, Tamil Nadu</p>
+                  <h4 className="font-semibold text-white">Location</h4>
+                  <p className="text-white">Chennai, Tamil Nadu</p>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ const Contact = () => {
 
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-gray-200 text-center">
-          <p className="text-gray-600">
+          <p className="text-white">
             © 2024 Narenkumar C. Built with React and Tailwind CSS.
           </p>
         </div>

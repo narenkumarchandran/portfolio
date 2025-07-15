@@ -23,12 +23,12 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    <header className={`fixed top-0 w-full z-50  bg-gradient-to-br from-coral-400 to-coral-600 transition-all duration-300 ${
+      isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-coral-500 to-coral-600 bg-clip-text text-transparent">
+          <div className="text-2xl font-bold bg-gradient-to-r from-coral-700 to-coral-700 bg-clip-text text-transparent">
             Portfolio
           </div>
           
@@ -38,7 +38,7 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-gray-700 hover:text-coral-500 transition-colors duration-200 font-medium"
+                className=" text-coral-100 hover:text-coral-500 transition-colors duration-200 font-medium"
               >
                 {item}
               </button>
@@ -56,7 +56,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg animate-fade-in">
+          <div className="md:hidden mt-4 py-4  rounded-lg shadow-lg animate-fade-in">
             {['Home', 'About', 'Projects', 'Contact'].map((item) => (
               <button
                 key={item}
