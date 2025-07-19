@@ -39,7 +39,11 @@ const Hero = () => {
                   View My Work
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-               <a href={`${import.meta.env.BASE_URL}Resume1.pdf`} download="Narenkumar_Resume.pdf">
+               <a
+                  href="https://drive.google.com/uc?export=download&id=1voRlJl78z-BfhoWuQx4ZQ1L7di5UhosO"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button 
                   variant="outline"
                   className="border-2 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-8 py-3 rounded-full text-lg transition-all duration-300">
