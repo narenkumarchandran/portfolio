@@ -68,7 +68,7 @@ export default {
 					400: '#0c76e8ff',
 					500: 'rgba(35, 117, 204, 1)',
 					600: '#152b4fff',
-					700: '#edededff',
+					700: '#000000ff',
 				}
 			},
 			borderRadius: {
