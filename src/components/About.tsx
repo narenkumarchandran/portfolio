@@ -5,7 +5,7 @@ import { Code, GraduationCap, Lightbulb, Target } from 'lucide-react';
 const About = () => {
   const skills = [
     'Python', 'Java', 'C/C++', 'Embedded C', 'JavaScript', 'HTML/CSS',
-    'SQL', 'Node.js', 'Arduino', 'Raspberry Pi', 'Git', 'Spring Boot',
+    'SQL', 'Node.js', 'React.js', 'Arduino', 'Raspberry Pi', 'Git', 'Spring Boot',
     'Flask', 'Selenium', 'Linux', 'Windows'
   ];
 
@@ -32,7 +32,7 @@ const About = () => {
                 <p className=" text-coral-100">
                   B.Tech Computer Science and Engineering (IoT)<br />
                   Shiv Nadar University, Chennai<br />
-                  CGPA: 8.70 | Aug 2023 - Aug 2027
+                  CGPA: 8.86 | Aug 2023 - Aug 2027
                 </p>
               </div>
             </div>
