@@ -40,7 +40,7 @@ const Hero = () => {
                   View My Work
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-               <a href={Narenresume} download="Narenkumar_Resume.pdf">
+               <a href="/Resume1.pdf" download="Narenkumar_Resume.pdf">
                   <Button 
                   variant="outline"
                   className="border-2 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-8 py-3 rounded-full text-lg transition-all duration-300">
@@ -85,7 +85,7 @@ const Hero = () => {
                 <div className="text-center">
                   <div className="absolute inset-4 rounded-full bg-white shadow-inner flex items-center justify-center overflow-hidden">
                     <img 
-                      src={Narenimage} 
+                      src="/naren.jpeg"
                       alt="Narenkumar" 
                        className="w-full h-full object-cover rounded-full"></img>
                   </div>
