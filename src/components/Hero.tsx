@@ -40,7 +40,7 @@ const Hero = () => {
                   View My Work
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-               <a href="/Resume1.pdf" download="Narenkumar_Resume.pdf">
+               <a href="/portfolio/Resume1.pdf" download="Narenkumar_Resume.pdf">
                   <Button 
                   variant="outline"
                   className="border-2 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-8 py-3 rounded-full text-lg transition-all duration-300">
