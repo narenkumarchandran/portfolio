@@ -27,7 +27,7 @@ const Projects = () => {
       { name: "Gemini Pro", icon: null },
       { name: "Sightengine's API", icon: null }
     ],
-    githubUrl: "https://github.com/narenkumarchandran/ReWear-second_hand_clothes_exchange_webo-25-ear",
+    githubUrl: "https://github.com/narenkumarchandran/ReWear-second_hand_clothes_exchange_web",
     date: "Jul 2025"
   },
   {
@@ -51,7 +51,7 @@ const Projects = () => {
       { name: "Arduino", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
       { name: "Streamlit", icon: "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.svg" }  // or Streamlit favicon/logo
     ],
-    githubUrl: "https://github.com/aerosibin/Voice-Controlled-LED-Interfacen",
+    githubUrl: "https://github.com/aerosibin/Voice-Controlled-LED-Interface",
     date: "Oct 2024"
   },
   {
