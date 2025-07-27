@@ -14,7 +14,7 @@ const Projects = () => {
       { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       { name: "Web Scraping", icon: null }
     ],
-    githubUrl: "https://github.com/narenkumarchandran",
+    githubUrl: "https://github.com/narenkumarchandran/GPU-Monitoring-System",
     date: "Nov 2024"
   },
   {
@@ -27,7 +27,7 @@ const Projects = () => {
       { name: "Gemini Pro", icon: null },
       { name: "Sightengine's API", icon: null }
     ],
-    githubUrl: "https://github.com/narenkumarchandran/rewear",
+    githubUrl: "https://github.com/narenkumarchandran/ReWear-second_hand_clothes_exchange_webo-25-ear",
     date: "Jul 2025"
   },
   {
@@ -39,7 +39,7 @@ const Projects = () => {
       { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       { name: "Data Analysis", icon: null }  // No official icon; could use a custom/graph icon or leave null
     ],
-    githubUrl: "https://github.com/narenkumarchandran",
+    githubUrl: "https://github.com/aerosibin/Social-Media-Parsing-Tool",
     date: "Sep 2024"
   },
   {
@@ -51,7 +51,7 @@ const Projects = () => {
       { name: "Arduino", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
       { name: "Streamlit", icon: "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.svg" }  // or Streamlit favicon/logo
     ],
-    githubUrl: "https://github.com/narenkumarchandran",
+    githubUrl: "https://github.com/aerosibin/Voice-Controlled-LED-Interfacen",
     date: "Oct 2024"
   },
   {
