@@ -28,8 +28,8 @@ const Hero = () => {
                 B.Tech Computer Science & Engineering Student
               </p>
               <p className="text-lg text-coral-100 mb-10 max-w-2xl">
-                Aspiring engineer with hands-on experience in embedded systems, AI tools, and full-stack projects. 
-                Passionate about creating impactful, accessible tech solutions.
+                Aspiring engineer pursuing B.Tech in Computer Science (IoT) with hands-on experience in full-stack
+                projects, AI tools, embedded systems. Interested in impactful, accessible tech solutions.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">

@@ -3,12 +3,25 @@ import React from 'react';
 import { Code, GraduationCap, Lightbulb, Target } from 'lucide-react';
 
 const About = () => {
-  const skills = [
-    'Python', 'Java', 'C/C++', 'Embedded C', 'JavaScript', 'HTML/CSS',
-    'SQL', 'Node.js', 'React.js', 'Arduino', 'Raspberry Pi', 'Git', 'Spring Boot',
-    'Flask', 'Selenium', 'Linux', 'Windows'
-  ];
-
+  const techStack = [
+  { name: 'Python', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',doc:'https://docs.python.org/3/' },
+   { name: 'C/C++', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg',doc:'https://en.cppreference.com/w/' },
+  { name: 'Java', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg',doc:'https://docs.oracle.com/en/java/' },
+  { name: 'Embedded C', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg',doc:'https://www.embedded.com/category/embedded-c/' },
+  { name: 'JavaScript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',doc:'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+  { name: 'HTML/CSS', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',doc:'https://developer.mozilla.org/en-US/docs/Web' },
+  { name: 'SQL', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg',doc:'https://dev.mysql.com/doc/' },
+  { name: 'Node.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',doc:'https://nodejs.org/en/docs/' },
+  { name: 'React.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',doc:'https://react.dev/' },
+  { name: 'Arduino', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg',doc:'https://docs.arduino.cc/' },
+  { name: 'Raspberry Pi', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg',doc:'https://www.raspberrypi.com/documentation/' },
+  { name: 'Git', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',doc:'https://git-scm.com/doc' },
+  { name: 'Spring Boot', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg',doc:'https://docs.spring.io/spring-boot/docs/current/reference/html/' },
+  { name: 'Flask', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg',doc:'https://flask.palletsprojects.com/en/latest/' },
+  { name: 'Selenium', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg',doc:'https://www.selenium.dev/documentation/' },
+  { name: 'Linux', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg',doc:'https://linux.die.net/man/' },
+  { name: 'Windows', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg',doc:'https://learn.microsoft.com/en-us/windows/' },
+];
   return (
     <section id="about" className="py-20 px-6 bg-coral-600">
       <div className="container mx-auto max-w-6xl">
@@ -69,17 +82,32 @@ const About = () => {
               <Lightbulb className="h-6 w-6 text-white" />
               <h3 className="text-2xl font-semibold">Skills & Technologies</h3>
             </div>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, index) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md transition-shadow duration-200 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 justify-items-center">
+              {techStack.map((tech, index) => (
+                <a
+                  key={index} 
+                  href={tech.doc}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center text-white text-sm cursor-pointer"
                 >
-                  {skill}
-                </span>
+                  <div
+                    className="p-3 bg-coral-200 rounded-xl shadow-md transition-transform duration-300 
+                              hover:scale-110 active:scale-110 shadow-lg hover:shadow-xl hover:ring-2 hover:ring-coral-400"
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <img
+                      src={tech.img}
+                      alt={tech.name}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <span className="mt-2 text-center text-white text-xs">{tech.name}</span>
+                </a>
               ))}
             </div>
+
+
           </div>
         </div>
       </div>

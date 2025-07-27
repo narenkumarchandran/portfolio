@@ -34,10 +34,10 @@ const Contact = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl text-white font-bold mb-6">
-            Get In <span className="text-coral-500">Touch</span>
+            Let's <span className="text-coral-500">collaborate</span>
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto">
-            I'm always open to discussing new opportunities, hackathons, IoT projects, or just having a chat about technology.
+            I'm always eager to explore exciting opportunities, collaborate on hackathons or Full-stack & IoT innovations, or simply connect over a conversation about technology.
           </p>
         </div>
 
@@ -45,9 +45,9 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8 ">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-coral-400">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6 text-coral-400">Connect with me</h3>
               <p className="text-white mb-8 leading-relaxed">
-                Whether you want to collaborate on a project, discuss IoT innovations, or just want to say hello, 
+                Whether you want to collaborate on a project, discuss Full-stack/IoT innovations, or just want to say hello, 
                 I'd love to hear from you. Drop me a message and I'll get back to you as soon as possible.
               </p>
             </div>

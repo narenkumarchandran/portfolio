@@ -5,35 +5,69 @@ import { Button } from '@/components/ui/button';
 
 const Projects = () => {
   const projects = [
-    {
-      title: "GPU Price Monitoring System",
-      description: "A real-time GPU price tracker that scrapes from Newegg for pricing, specs, and availability. Features automated 10-minute updates, SQL database for historical analysis, and Flask-based web interface with alerts and visualizations.",
-      technologies: ["Python", "Flask", "SQL", "Web Scraping"],
-      githubUrl: "https://github.com/narenkumarchandran",
-      date: "Nov 2024"
-    },
-    {
-      title: "Voice Controlled RGB LED System",
-      description: "Developed a voice-controlled LED system using Hugging Face Whisper and Arduino for hands-free interaction. Built with Streamlit interface for real-time voice and manual control through serial communication.",
-      technologies: ["Whisper", "Hugging Face", "Arduino", "Streamlit"],
-      githubUrl: "https://github.com/narenkumarchandran",
-      date: "Oct 2024"
-    },
-    {
-      title: "Parsing of Social Media Feed",
-      description: "Engineered an automated investigation tool to extract data from social media accounts using Selenium. Scraped posts, messages, and followers while ensuring compliance with platform policies and data laws.",
-      technologies: ["Selenium", "Python", "SQL", "Data Analysis"],
-      githubUrl: "https://github.com/narenkumarchandran",
-      date: "Sep 2024"
-    },
-    {
-      title: "IoT Object Detecting System",
-      description: "Built an Arduino-based obstacle detection system using HC-SR04 ultrasonic sensor and buzzer alerts. Designed as a low-cost proximity aid to assist visually impaired users in navigating safely.",
-      technologies: ["Arduino UNO", "Ultrasonic Sensor", "Embedded C", "IoT"],
-      githubUrl: "https://github.com/narenkumarchandran",
-      date: "Aug 2024"
-    }
-  ];
+  {
+    title: "GPU Price Monitoring System",
+    description: "A real-time GPU price tracker...A real-time GPU price tracker that scrapes from Newegg for pricing, specs, and availability. Features automated 10-minute updates, SQL database for historical analysis, and Flask-based web interface with alerts and visualizations.",
+    technologies: [
+      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+      { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Web Scraping", icon: null }
+    ],
+    githubUrl: "https://github.com/narenkumarchandran",
+    date: "Nov 2024"
+  },
+  {
+    title: "ReWear – Clothing Exchange Platform",
+    description: "Built a responsive AI-powered frontend using React and Gemini Pro to allow users to upload clothing images and auto-generate detailed listings with size, condition, and search tags.",
+    technologies: [
+      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "TailwindCSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "Gemini Pro", icon: null },
+      { name: "Sightengine's API", icon: null }
+    ],
+    githubUrl: "https://github.com/narenkumarchandran/rewear",
+    date: "Jul 2025"
+  },
+  {
+    title: "Parsing of Social Media Feed",
+    description: "Engineered an automated investigation tool to extract data from social media accounts using Selenium. Scraped posts, messages, and followers while ensuring compliance with platform policies and data laws.",
+    technologies: [
+      { name: "Selenium", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" },
+      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Data Analysis", icon: null }  // No official icon; could use a custom/graph icon or leave null
+    ],
+    githubUrl: "https://github.com/narenkumarchandran",
+    date: "Sep 2024"
+  },
+  {
+    title: "Voice Controlled RGB LED System",
+    description: "Developed a voice-controlled LED system using Hugging Face Whisper and Arduino for hands-free interaction. Built with Streamlit interface for real-time voice and manual control through serial communication.",
+    technologies: [
+      { name: "Whisper", icon: null },  
+      { name: "Hugging Face", icon: "https://huggingface.co/front/assets/huggingface_logo.svg" },
+      { name: "Arduino", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
+      { name: "Streamlit", icon: "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.svg" }  // or Streamlit favicon/logo
+    ],
+    githubUrl: "https://github.com/narenkumarchandran",
+    date: "Oct 2024"
+  },
+  {
+  title: "IoT Object Detecting System",
+  description: "Built an Arduino-based obstacle detection system using HC-SR04 ultrasonic sensor and buzzer alerts. Designed as a low-cost proximity aid to assist visually impaired users in navigating safely.",
+  technologies: [
+    { name: "Arduino UNO", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
+    { name: "Ultrasonic Sensor", icon: null },  // No official icon; can use a custom sensor icon if needed
+    { name: "Embedded C", icon: null },  // No official logo; can use a C icon or microchip graphic
+    { name: "IoT", icon: "https://img.icons8.com/ios-filled/50/internet-of-things.png" }  // IoT generic icon
+  ],
+  githubUrl: "https://github.com/narenkumarchandran",
+  date: "Aug 2024"
+}
+];
+
 
   return (
     <section id="projects" className="py-20 px-6 bg-coral-600">
@@ -68,12 +102,20 @@ const Projects = () => {
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <span
-                        key={tech}
-                        className="px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm font-medium"
+                        key={tech.name}
+                        className="flex items-center gap-1 px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm font-medium"
                       >
-                        {tech}
+                        {tech.icon && (
+                          <img
+                            src={tech.icon}
+                            alt={tech.name}
+                            className="w-4 h-4"
+                          />
+                        )}
+                        {tech.name}
                       </span>
                     ))}
+
                   </div>
                 </div>
                 
