@@ -1,100 +1,249 @@
-import Narenimage from "../naren.jpeg"
-import Narenresume from "./Resume1.pdf"
-import React from 'react';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Download, Github, Linkedin, Mail, Cpu } from 'lucide-react';
+import SpotlightCard from './ui/SpotlightCard';
+import MagneticButton from './ui/MagneticButton';
 
-const Hero = () => {
+const BOOT_SEQUENCE = [
+  { text: '> BIOS v2.6.0 — Narenkumar C | Chennai, India', delay: 0 },
+  { text: '> [OK] B.Tech CSE (IoT) @ Shiv Nadar University: CGPA 8.9', delay: 400 },
+  { text: '> [OK] Shiv Nadar University: B.Tech CSE (IoT) · CGPA 8.9', delay: 800 },
+  { text: '> [OK] Infosys AI/ML Internship: FastAPI + LLaMA 3.3-70B', delay: 1200 },
+  { text: '> [OK] Smart-AMBU: MPX5010DP + Arduino + MQTT + Node-RED', delay: 1600 },
+  { text: '> [OK] ReWear: Gemini 2.0 Flash + KNN + BERT pipeline', delay: 2000 },
+  { text: '> [OK] Movie Streaming: React + JWT + TMDB API', delay: 2400 },
+  { text: '> [OK] Deputy Club Head @ SNUC Potential Robotics Club', delay: 2800 },
+  { text: '> [OK] NPTEL: LLM · Ethical Hacking | Deloitte: Data Analytics', delay: 3200 },
+  { text: '> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', delay: 3600 },
+  { text: '> SYSTEM READY. Welcome, Narenkumar C.', delay: 3900, highlight: true },
+];
+
+const TAGLINES = [
+  'Full-Stack Web Development',
+  'IoT & Embedded Systems',
+  'AI/ML Engineering',
+  'RAG-Powered Applications',
+  'Real-Time IoT Monitoring',
+];
+
+const Hero: React.FC = () => {
+  const [bootLines, setBootLines] = useState<typeof BOOT_SEQUENCE>([]);
+  const [taglineIdx, setTaglineIdx] = useState(0);
+  const [displayTagline, setDisplayTagline] = useState('');
+  const [taglineTyping, setTaglineTyping] = useState(true);
+  const bootDone = useRef(false);
+
+  useEffect(() => {
+    if (bootDone.current) return;
+    bootDone.current = true;
+    BOOT_SEQUENCE.forEach((line) => {
+      setTimeout(() => {
+        setBootLines(prev => [...prev, line]);
+      }, line.delay);
+    });
+  }, []);
+
+  useEffect(() => {
+    const target = TAGLINES[taglineIdx];
+    let i = 0;
+    setDisplayTagline('');
+    setTaglineTyping(true);
+
+    const type = setInterval(() => {
+      if (i < target.length) {
+        setDisplayTagline(target.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(type);
+        setTaglineTyping(false);
+        setTimeout(() => {
+          setTaglineIdx(idx => (idx + 1) % TAGLINES.length);
+        }, 2200);
+      }
+    }, 60);
+
+    return () => clearInterval(type);
+  }, [taglineIdx]);
+
   const scrollToProjects = () => {
-    const element = document.getElementById('projects');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 px-6  bg-coral-600">
-      <div className="container   mx-auto max-w-6xl">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
-          <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-            <div className="animate-fade-in">
-              <h1 className="text-5xl lg:text-7xl  text-coral-100 font-bold mb-6 leading-tight">
-                Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-coral-500 to-coral-400 bg-clip-text text-transparent">
-                  Narenkumar C
-                </span>
+    <section id="home" className="relative min-h-screen flex items-center pt-20 pb-10 px-6 overflow-hidden">
+      <div className="grid-bg" />
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          {/* Left — Main content */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-2 h-2 rounded-full bg-neon animate-pulse-neon" />
+              <span className="font-mono text-xs text-neon/70 tracking-widest">SYSTEM ONLINE — OPEN TO OPPORTUNITIES</span>
+            </div>
+
+            <div className="mb-4 overflow-hidden">
+              <h1
+                className="text-6xl lg:text-8xl font-display font-bold leading-none text-white glitch cursor-pointer select-none"
+                data-text="NAREN"
+              >
+                NAREN
               </h1>
-              <p className="text-xl lg:text-2xl  text-coral-100 mb-8 leading-relaxed">
-                B.Tech Computer Science & Engineering Student
-              </p>
-              <p className="text-lg text-coral-100 mb-10 max-w-2xl">
-                Aspiring engineer pursuing B.Tech in Computer Science (IoT) with hands-on experience in full-stack
-                projects, AI tools, embedded systems. Interested in impactful, accessible tech solutions.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-                <Button 
-                  onClick={scrollToProjects}
-                  className="bg-coral-500 hover:bg-coral-600 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
-                >
-                  View My Work
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-               <a href="https://narenkumarchandran.github.io/portfolio/Resume1.pdf" target="_blank" rel="noopener noreferrer">
-                  <Button 
-                    variant="outline"
-                    className="border-2 border-coral-500 text-coral-500 hover:bg-coral-500 hover:text-white px-8 py-3 rounded-full text-lg transition-all duration-300">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download CV
-                  </Button>
-                </a>
-
-
-              </div>
-
-              <div className="flex gap-6 justify-center lg:justify-start">
-                <a 
-                  href="https://github.com/narenkumarchandran" 
-                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="h-6 w-6 text-gray-700" />
-                </a>
-                <a 
-                  href="https://linkedin.com/in/narenkumarchandran" 
-                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin className="h-6 w-6 text-blue-600" />
-                </a>
-                <a 
-                  href="mailto:narenkumarchandran@gmail.com" 
-                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                >
-                  <Mail className="h-6 w-6 text-coral-500" />
-                </a>
+              <h1
+                className="text-6xl lg:text-8xl font-display font-bold leading-none neon-text glitch cursor-pointer select-none"
+                data-text="KUMAR"
+              >
+                KUMAR
+              </h1>
+              <div className="flex items-end gap-3 mt-1">
+                <span className="font-mono text-white/30 text-base tracking-[0.3em] uppercase">CHANDRAN</span>
+                <Cpu className="w-4 h-4 text-neon/40 mb-1" />
               </div>
             </div>
-          </div>
 
-          <div className="lg:w-1/2 flex justify-center">
-            <div className="relative animate-scale-in">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-coral-400 to-coral-600 shadow-2xl"></div>
-              <div className="absolute inset-4 rounded-full bg-white shadow-inner flex items-center justify-center">
-                <div className="text-center">
-                  <div className="absolute inset-4 rounded-full bg-white shadow-inner flex items-center justify-center overflow-hidden">
-                    <img 
-                      src={`${import.meta.env.BASE_URL}naren.jpeg`}
-                      alt="Narenkumar" 
-                       className="w-full h-full object-cover rounded-full"></img>
-                  </div>
+            <div className="mb-8 h-10 flex items-center">
+              <span className="font-mono text-base lg:text-lg text-white/60 mr-2">~/</span>
+              <span className="font-mono text-base lg:text-lg text-cyber">
+                {displayTagline}
+              </span>
+              {taglineTyping && <span className="cursor-blink" />}
+            </div>
+
+            <p className="text-white/50 text-sm leading-relaxed max-w-md mb-10 font-mono">
+              B.Tech CSE (IoT) @ Shiv Nadar University · CGPA 8.9 ·
+              Deputy Club Head @ SNUC Potential Robotics Club ·
+              AI/ML Intern @ Infosys Springboard.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mb-10">
+              <MagneticButton onClick={scrollToProjects} className="btn-neon group flex items-center gap-2">
+                <span>VIEW PROJECTS</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </MagneticButton>
+              <MagneticButton
+                as="a"
+                href={`${import.meta.env.BASE_URL}Resume1.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-neon btn-cyan flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                <span>DOWNLOAD CV</span>
+              </MagneticButton>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <span className="font-mono text-xs text-white/20 tracking-widest">CONNECT://</span>
+              <MagneticButton
+                as="a"
+                href="https://github.com/narenkumarchandran"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 border border-void-300 text-white/50 hover:border-neon hover:text-neon transition-all duration-200"
+                aria-label="GitHub"
+              >
+                <Github className="w-4 h-4" />
+              </MagneticButton>
+              <MagneticButton
+                as="a"
+                href="https://linkedin.com/in/narenkumarchandran"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 border border-void-300 text-white/50 hover:border-cyber hover:text-cyber transition-all duration-200"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </MagneticButton>
+              <MagneticButton
+                as="a"
+                href="mailto:narenkumarchandran@gmail.com"
+                className="p-2.5 border border-void-300 text-white/50 hover:border-amber hover:text-amber transition-all duration-200"
+                aria-label="Email"
+              >
+                <Mail className="w-4 h-4" />
+              </MagneticButton>
+            </div>
+          </motion.div>
+
+          {/* Right — Terminal */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+          >
+            <SpotlightCard enableTilt={false} className="terminal shadow-[0_0_80px_rgba(0,255,65,0.08)] border-none">
+              <div className="terminal-header">
+                <span className="terminal-dot bg-[#ff5f56]" />
+                <span className="terminal-dot bg-[#ffbd2e]" />
+                <span className="terminal-dot bg-neon" />
+                <span className="font-mono text-xs text-white/30 ml-4 tracking-wider">
+                  narenkumar@portfolio:~$ boot --init
+                </span>
+              </div>
+
+              <div className="terminal-body space-y-0.5">
+                {bootLines.map((line, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -5 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className={`text-xs leading-6 ${
+                      line.highlight ? 'text-neon font-bold neon-text' : 'text-neon/60'
+                    }`}
+                  >
+                    {line.text}
+                  </motion.div>
+                ))}
+                {bootLines.length < BOOT_SEQUENCE.length && <span className="cursor-blink" />}
+                {bootLines.length === BOOT_SEQUENCE.length && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-xs text-white/40 mt-4 flex items-center gap-2"
+                  >
+                    <span>narenkumar@portfolio:~$</span>
+                    <span className="cursor-blink" />
+                  </motion.div>
+                )}
+              </div>
+
+              <div className="border-t border-void-300 px-5 py-3 flex items-center justify-between">
+                <div className="flex gap-6">
+                  {[
+                    { label: 'CGPA', value: '8.9' },
+                    { label: 'CERTS', value: '3' },
+                  ].map(stat => (
+                    <div key={stat.label} className="text-center">
+                      <div className="font-mono text-neon text-sm font-bold">{stat.value}</div>
+                      <div className="font-mono text-white/30 text-[10px] tracking-widest">{stat.label}</div>
+                    </div>
+                  ))}
                 </div>
+                <div className="font-mono text-[10px] text-neon/30 tracking-wider">SYS:OK</div>
               </div>
-            </div>
-          </div>
+            </SpotlightCard>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4.5 }}
+          className="mt-16 flex flex-col items-center gap-2"
+        >
+          <span className="font-mono text-[10px] text-white/20 tracking-widest">SCROLL TO EXPLORE</span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-[1px] h-8 bg-gradient-to-b from-neon/50 to-transparent"
+          />
+        </motion.div>
       </div>
     </section>
   );
