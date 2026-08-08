@@ -90,7 +90,6 @@ const TECH_ROW1 = [
   { name: 'HTML/CSS',    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',          doc: 'https://developer.mozilla.org/' },
   { name: 'FastAPI',     img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg',      doc: 'https://fastapi.tiangolo.com/' },
   { name: 'SQLAlchemy',  img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg', doc: 'https://www.sqlalchemy.org/' },
-  { name: 'LLaMA',       img: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Meta_Llama_3_Logo.svg', doc: 'https://llama.meta.com/' },
   { name: 'Groq API',    img: 'https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/GCP-Dark.svg', doc: 'https://groq.com/' }, // Using generic for Groq
   { name: 'RAG',         img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg', doc: 'https://aws.amazon.com/what-is/retrieval-augmented-generation/' },
 ];
